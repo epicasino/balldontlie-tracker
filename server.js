@@ -1,4 +1,4 @@
-require("dotenv").config;
+require("dotenv").config();
 
 const express = require("express");
 const { join } = require("path");
@@ -6,6 +6,8 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 
 const app = express();
+
+const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -36,4 +38,8 @@ app.use(express.static(join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-sequelize.sync({ force: false }).then(() => app.listen(3001));
+sequelize
+  .sync({ force: false })
+  .then(() =>
+    app.listen(PORT, console.log(`Server listening on Port ${PORT}!`))
+  );
