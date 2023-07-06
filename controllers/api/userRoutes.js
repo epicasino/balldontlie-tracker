@@ -30,13 +30,13 @@ router.post("/login", async (req, res) => {
     });
 
     if (!user) {
-      res.status(400).json({ message: "Invalid username or password!" });
+      return res.status(400).json({ message: "Invalid username or password!" });
     }
 
     const validPw = user.checkpassword(req.body.password);
 
     if (!validPw) {
-      res.status(400).json({ message: "Invalid username or password!" });
+      return res.status(400).json({ message: "Invalid username or password!" });
     }
 
     req.session.save(() => {
