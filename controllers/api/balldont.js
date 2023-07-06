@@ -1,19 +1,19 @@
 const router = require("express").Router();
-const axios = require("axios");
+const { Player } = require("../../models");
+// const axios = require("axios");
 
 // Gets player data on balldontlie
-router.get("/", async (req, res) => {
-  const userInput = "lebron";
-  const user = req.user;
-  let page = 1;
-
+router.post("/save", async (req, res) => {
   try {
-    // fetch from api
-    const playerData = await fetch(
-      `https://www.balldontlie.io/api/v1/players?search=${userInput}&page=${page}`
-    ).then((data) => data.json());
-    res.json(playerData.data);
-    // save data from api
+    const newPlayer = await Player.create({
+      player_id: req.body.id,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      team_name: req.body.team_name,
+      user_id: req.session.userId,
+    });
+
+    res.status(200).json({ message: "Player successfully saved!" });
   } catch (error) {
     res.status(500).json(error);
   }

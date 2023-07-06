@@ -23,6 +23,10 @@ Player.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    team_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
