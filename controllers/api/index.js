@@ -5,7 +5,7 @@ const ballDontLie = require('./balldont');
 
 
 router.use("/user", userRoutes);
-router.use('/test', ballDontLie);
+router.use('/balldontlie', ballDontLie);
 
 module.exports = router;
 
