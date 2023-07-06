@@ -44,7 +44,9 @@ router.post("/login", async (req, res) => {
       req.session.username = user.username;
       req.session.loggedIn = true;
 
-      res.json(user);
+      res.json({user, message: "logged In"});
+
+    
     });
   } catch (err) {
     res.status(500).json(err);
@@ -61,24 +63,6 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.get('/test', async (req, res) =>{
-  const userInput = req.body.userInput;
-  const user = req.user;
-  
-  try {
-    // fetch from api
-    const ballApi = await axios.get(`https://www.balldontlie.io/api/v1/players`);
-    const data = ballApi.data;
-    res.json(ballApi);
-    // save data from api 
-    // if ()
-    // res.json({message: "test"});
-  
-  }
-  catch(error) {
-    console.log(error)
-  }
-}
-)
+
 
 module.exports = router;
