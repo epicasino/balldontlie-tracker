@@ -3,15 +3,15 @@ const axios = require("axios");
 
 // Gets all player data on balldontlie
 router.get("/", async (req, res) => {
-  const userInput = req.body.userInput;
+  const userInput = 'lebron';
   const user = req.user;
+  let page = 1;
 
   try {
     // fetch from api
     const playerData = await fetch(
-      `https://www.balldontlie.io/api/v1/players`
+      `https://www.balldontlie.io/api/v1/players?search=${userInput}&page=${page}`
     ).then((data) => data.json());
-    // .then((results) => res.json(results));
     res.json(playerData)
     // save data from api
     // if ()
