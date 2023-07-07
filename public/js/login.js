@@ -8,23 +8,19 @@ const registerUser = async () => {
   const password = document.getElementById("regPassword").value.trim();
   // checks if there is a username and password in fields
   if (username && password) {
-    try {
-      const response = await axios.post("/api/user/", {
-        username,
-        password,
-      });
-      if (response.statusText === "OK") {
-        alert("Account Created!");
-        document.location.replace("/");
-      } else if (response.status === 500) {
-        alert('Jeff');
-        console.log(response);
-
-      }
-      
+    const response = await axios.post("/api/user/", {
+      username,
+      password,
+    });
+    if (response.statusText === "OK") {
+      alert("Account Created!");
+      document.location.replace("/");
+    } else if (response.status === 500) {
+      alert("Jeff");
+      console.log(response);
+    }
   } else {
-
-    alert('Username or Password field blank');
+    alert("Username or Password field blank");
   }
 };
 
