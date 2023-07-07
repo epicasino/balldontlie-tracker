@@ -13,11 +13,11 @@ testBtn.addEventListener("click", async () => {
     headers: { "Content-Type": "application/json" },
   });
 
+  console.log(response);
+
   if (!response.ok) {
     window.location.replace("/login");
   }
-
-  console.log(response);
 });
 
 // https://www.balldontlie.io/api/v1/players?search=james%20harden

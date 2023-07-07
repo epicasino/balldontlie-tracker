@@ -62,3 +62,16 @@ const loginUser = async () => {
 };
 
 loginBtn.addEventListener("click", loginUser);
+
+const logoutBtnEl = document.getElementById("logoutBtn");
+
+logoutBtnEl.addEventListener("click", async () => {
+  const response = await fetch("/api/user/logout", {
+    method: "POST",
+  });
+  console.log(response);
+  if (response.ok) {
+    alert('Logged out!')
+    window.location.replace("/");
+  };
+});

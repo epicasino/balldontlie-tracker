@@ -10,7 +10,6 @@ router.post("/save", async (req, res) => {
         player_id: req.body.id,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        team_name: req.body.team_name,
         user_id: req.session.userId,
       });
 

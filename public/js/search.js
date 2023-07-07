@@ -8,7 +8,13 @@ const searchForPlayer = async (event) => {
     `https://www.balldontlie.io/api/v1/players?search=${joinedName}`
   ).then((res) => res.json());
   const playerData = response.data;
-  console.log(playerData);
+  const resultsBoxEl = document.getElementById("results");
+  playerData.forEach((player) => {
+    const playerEl = document.createElement("p");
+    playerEl.setAttribute('data-player_id', player.id)
+    playerEl.textContent = `${player.first_name} ${player.last_name}`;
+    resultsBoxEl.appendChild(playerEl);
+  });
 };
 
 playerSearchBtn.addEventListener("click", searchForPlayer);
