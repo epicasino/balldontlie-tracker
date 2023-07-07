@@ -5,18 +5,16 @@ testBtn.addEventListener("click", async () => {
     id: 237,
     first_name: "LeBron",
     last_name: "James",
-    team_name: "Los Angeles Lakers",
   };
-  const response = await fetch("/api/balldontlie/save", {
-    method: "POST",
-    body: JSON.stringify(addedPlayer),
-    headers: { "Content-Type": "application/json" },
-  });
 
-  console.log(response);
-
-  if (!response.ok) {
-    window.location.replace("/login");
+  try {
+    const response = await axios.post("/api/balldontlie/save", addedPlayer);
+  } catch (err) {
+    if (err.code === "ERR_BAD_REQUEST") {
+      alert("You need to be logged in!");
+      window.location.replace("/login");
+    }
+    console.log(err);
   }
 });
 
