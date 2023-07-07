@@ -19,3 +19,5 @@ testBtn.addEventListener("click", async () => {
 
   console.log(response);
 });
+
+// https://www.balldontlie.io/api/v1/players?search=james%20harden

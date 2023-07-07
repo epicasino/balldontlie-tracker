@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Player } = require("../../models");
 // const axios = require("axios");
 
-// Gets player data on balldontlie
+// save player data on balldontlie
 router.post("/save", async (req, res) => {
   if (req.session.loggedIn) {
     try {
@@ -18,6 +18,7 @@ router.post("/save", async (req, res) => {
     } catch (error) {
       res.status(500).json(error);
     }
-  } else res.status(400).json({ message: 'Not logged in'});
+  } else res.status(400).json({ message: "Not logged in" });
 });
+
 module.exports = router;
