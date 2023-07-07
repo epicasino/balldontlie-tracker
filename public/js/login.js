@@ -8,17 +8,12 @@ const registerUser = async () => {
   const password = document.getElementById("regPassword").value.trim();
   // checks if there is a username and password in fields
   if (username && password) {
-      // fetch request to api to create a new user
-      const response = await fetch("/api/user/", {
-        method: "POST",
-        body: JSON.stringify({ username, password }),
-        headers: { "Content-Type": "application/json" },
+    try {
+      const response = await axios.post("/api/user/", {
+        username,
+        password,
       });
-
-      console.log(response);
-
-      if (response.ok) {
-    
+      if (response.statusText === "OK") {
         alert("Account Created!");
         document.location.replace("/");
       } else if (response.status === 500) {
@@ -69,3 +64,16 @@ const loginUser = async () => {
 };
 
 loginBtn.addEventListener("click", loginUser);
+
+const logoutBtnEl = document.getElementById("logoutBtn");
+
+logoutBtnEl.addEventListener("click", async () => {
+  const response = await fetch("/api/user/logout", {
+    method: "POST",
+  });
+  console.log(response);
+  if (response.ok) {
+    alert("Logged out!");
+    window.location.replace("/");
+  }
+});
