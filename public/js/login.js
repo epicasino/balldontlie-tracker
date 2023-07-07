@@ -8,7 +8,6 @@ const registerUser = async () => {
   const password = document.getElementById("regPassword").value.trim();
   // checks if there is a username and password in fields
   if (username && password) {
-    try {
       // fetch request to api to create a new user
       const response = await fetch("/api/user/", {
         method: "POST",
@@ -16,13 +15,21 @@ const registerUser = async () => {
         headers: { "Content-Type": "application/json" },
       });
 
+      console.log(response);
+
       if (response.ok) {
+    
         alert("Account Created!");
         document.location.replace("/");
+      } else if (response.status === 500) {
+        alert('Jeff');
+        console.log(response);
+
       }
-    } catch (error) {
-      console.log(error);
-    }
+      
+  } else {
+
+    alert('Username or Password field blank');
   }
 };
 

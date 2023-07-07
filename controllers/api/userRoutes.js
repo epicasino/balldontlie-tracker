@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
@@ -28,6 +29,8 @@ router.post("/login", async (req, res) => {
         username: req.body.username,
       },
     });
+ 
+
 
     if (!user) {
       return res.status(400).json({ message: "Invalid username or password!" });
