@@ -16,10 +16,15 @@ const registerUser = async () => {
       if (response.statusText === "OK") {
         alert("Account Created!");
         document.location.replace("/");
+      } else if (response.status === 500) {
+        alert('Jeff');
+        console.log(response);
+
       }
-    } catch (error) {
-      console.log(error);
-    }
+      
+  } else {
+
+    alert('Username or Password field blank');
   }
 };
 
