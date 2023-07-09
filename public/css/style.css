@@ -1,6 +1,27 @@
 /* front-end styling goes here ... */
 
-body {
+:root {
+--col1: #F0E3CA;
+--col2: #FF8303;
+--col3: #A35709;
+--col4: #A35709;
+--col5: #000000;
+--col6: #fff;
+
+}
+
+#playerNameInput {
+  height: 4rem
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;    
+}
+
+/* body {
   font-family: Arial, sans-serif;
   background-color: #F2F2F2;
 }
@@ -30,7 +51,7 @@ body {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
-/* button {
+button {
   display: block;
   width: 100%;
   padding: 10px;
