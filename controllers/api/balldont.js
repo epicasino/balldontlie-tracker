@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Player } = require("../../models");
-// const axios = require("axios");
+const axios = require("axios");
 
 // save player data on balldontlie
 router.post("/save", async (req, res) => {
