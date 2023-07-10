@@ -8,18 +8,19 @@ const registerUser = async () => {
   const password = document.getElementById("regPassword").value.trim();
   // checks if there is a username and password in fields
   if (username && password) {
-    try {
-      const response = await axios.post("/api/user/", {
-        username,
-        password,
-      });
-      if (response.statusText === "OK") {
-        alert("Account Created!");
-        document.location.replace("/");
-      }
-    } catch (error) {
-      console.log(error);
+    const response = await axios.post("/api/user/", {
+      username,
+      password,
+    });
+    if (response.statusText === "OK") {
+      alert("Account Created!");
+      document.location.replace("/");
+    } else if (response.status === 500) {
+      alert("Jeff");
+      console.log(response);
     }
+  } else {
+    alert("Username or Password field blank");
   }
 };
 
@@ -37,23 +38,18 @@ const loginUser = async () => {
 
   // checks if there is a username and password in fields
   if (username && password) {
-    try {
-      const response = await fetch("/api/user/login", {
-        method: "POST",
-        body: JSON.stringify({ username, password }),
-        headers: { "Content-Type": "application/json" },
-      });
-      // if the response comes out okay, alert user and return them to homepage
-      if (response.ok) {
-        // Later on when homepage is built, replace alert with updated user info on homepage (username on top right of page instead of 'guest')
-        alert("Account Logged In!");
-        document.location.replace("/");
-      } else {
-        // else, alert user username or password is incorrect
-        alert("Incorrect username or password!");
-      }
-    } catch (error) {
-      console.log(error);
+    const response = await axios.post("/api/user/login", {
+      username,
+      password,
+    });
+    // if the response comes out okay, alert user and return them to homepage
+    if (response.status === 200) {
+      // Later on when homepage is built, replace alert with updated user info on homepage (username on top right of page instead of 'guest')
+      alert("Account Logged In!");
+      document.location.replace("/");
+    } else if (response.status === 400) {
+      // else, alert user username or password is incorrect
+      alert("Incorrect username or password!");
     }
   }
 };
@@ -63,11 +59,8 @@ loginBtn.addEventListener("click", loginUser);
 const logoutBtnEl = document.getElementById("logoutBtn");
 
 logoutBtnEl.addEventListener("click", async () => {
-  const response = await fetch("/api/user/logout", {
-    method: "POST",
-  });
-  console.log(response);
-  if (response.ok) {
+  const response = await axios.post("/api/user/logout");
+  if (response.status === 200) {
     alert("Logged out!");
     window.location.replace("/");
   }

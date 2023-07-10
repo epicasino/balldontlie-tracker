@@ -1,20 +1,15 @@
-const playerSearchBtn = document.getElementById("playerNameSubmitBtn");
+const playerSearchForm = document.getElementById("playerSearchBar");
 
 const searchForPlayer = async (event) => {
   event.preventDefault();
-  const playerName = document.getElementById("playerNameInput").value;
-  const joinedName = playerName.split(" ").join("%20");
-  const response = await fetch(
-    `https://www.balldontlie.io/api/v1/players?search=${joinedName}`
-  ).then((res) => res.json());
-  const playerData = response.data;
-  const resultsBoxEl = document.getElementById("results");
-  playerData.forEach((player) => {
-    const playerEl = document.createElement("p");
-    playerEl.setAttribute('data-player_id', player.id)
-    playerEl.textContent = `${player.first_name} ${player.last_name}`;
-    resultsBoxEl.appendChild(playerEl);
-  });
+  let playerNameInput = document.getElementById("playerNameInput").value;
+  playerNameInput = playerNameInput.split(" ").join("%20");
+
+  if (playerNameInput) {
+    window.location.replace(`/${playerNameInput}`);
+  }
 };
 
-playerSearchBtn.addEventListener("click", searchForPlayer);
+playerSearchForm.addEventListener("submit", searchForPlayer);
+
+// https://www.balldontlie.io/api/v1/players?search=james%20harden
