@@ -1,12 +1,14 @@
-{{#each playerResults as |player|}}
-
-{{#if player.position}}
+<div class="m-3" id="resultsContainer">
+  {{#each playerResults as |player|}}
+  
+  {{#if player.position}}
   <div class="card">
     <div class="card-header fs-5">
       Featured
     </div>
     <div class="card-body">
       <h4 class="card-text">{{player.first_name}} {{player.last_name}}</h4>
+      <h5 class="card-text">Team: {{player.team.full_name}}</h5>
       <h5 class="card-text">Position: {{player.position}}</h5>
       {{#if player.height_feet}}
       <h5 class="card-text">Height: {{player.height_feet}}' {{player.height_inches}}"</h5>
@@ -14,9 +16,12 @@
       {{#if player.weight_pounds}}
       <h5 class="card-text">Weight: {{player.weight_pounds}} lbs</h5>
       {{/if}}
-      <button type="button" class="btn btn-primary">Save Player</button>
+      <button type="button" class="btn btn-primary" data-player_id="{{player.id}}" data-first_name="{{player.first_name}}" data-last_name="{{player.last_name}}" id="savePlayerBtn">Save Player</button>
     </div>
   </div>
-{{/if}}
+  {{/if}}
+  
+  {{/each}}
+</div>
 
-{{/each}}
+<script src="./js/savePlayer.js"></script>
