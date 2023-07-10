@@ -19,6 +19,7 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,
@@ -42,7 +43,7 @@ User.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: 'user'
+    modelName: "user",
   }
 );
 

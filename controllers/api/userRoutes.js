@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
@@ -28,15 +29,17 @@ router.post("/login", async (req, res) => {
         username: req.body.username,
       },
     });
+ 
+
 
     if (!user) {
-      res.status(400).json({ message: "Invalid username or password!" });
+      return res.status(400).json({ message: "Invalid username or password!" });
     }
 
     const validPw = user.checkpassword(req.body.password);
 
     if (!validPw) {
-      res.status(400).json({ message: "Invalid username or password!" });
+      return res.status(400).json({ message: "Invalid username or password!" });
     }
 
     req.session.save(() => {
@@ -44,7 +47,9 @@ router.post("/login", async (req, res) => {
       req.session.username = user.username;
       req.session.loggedIn = true;
 
-      res.json(user);
+      res.json({user, message: "logged In"});
+
+    
     });
   } catch (err) {
     res.status(500).json(err);
@@ -60,5 +65,7 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+
 
 module.exports = router;
