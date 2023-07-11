@@ -41,6 +41,7 @@ router.delete("/player/:player_id", async (req, res) => {
       res.status(200).json({ message: "Player Deleted!" });
     } else res.status(404).json({ message: "404 Not Found" });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
