@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Player, User } = require("../../models");
+const { Player, User, Team } = require("../../models");
 const axios = require("axios");
 
 // save player data on balldontlie
@@ -40,6 +40,25 @@ router.delete("/player/:player_id", async (req, res) => {
     if (deletedPlayer) {
       res.status(200).json({ message: "Player Deleted!" });
     } else res.status(404).json({ message: "404 Not Found" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/teams/:team_id", async (req, res) => {
+  try {
+    const selectedTeam = await Team.findOne({
+      where: {
+        team_logo: req.params.team_id,
+        // user_id: req.session.userId,
+      },
+    });
+    if (selectedTeam) {
+      console.log(selectedTeam);
+
+      res.status(200).json({ selectedTeam });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
