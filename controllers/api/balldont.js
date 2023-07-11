@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Player } = require("../../models");
+const { Player, User } = require("../../models");
 const axios = require("axios");
 
 // save player data on balldontlie
@@ -18,6 +18,39 @@ router.post("/save", async (req, res) => {
       res.status(500).json(error);
     }
   } else res.status(400).json({ message: "Not logged in" });
+});
+
+// gets all saved player names and player_id from user_id
+router.get("/:user_id", async (req, res) => {
+  const userData = await User.findByPk(req.params.user_id, {
+    include: [Player],
+  });
+  const userPlayers = await userData.get({ plain: true });
+  res.status(200).json(userPlayers);
+});
+
+router.delete("/player/:player_id", async (req, res) => {
+  try {
+    const deletedPlayer = await Player.destroy({
+      where: {
+        player_id: req.params.player_id,
+        user_id: req.session.userId,
+      },
+    });
+    if (deletedPlayer) {
+      res.status(200).json({ message: "Player Deleted!" });
+    } else res.status(404).json({ message: "404 Not Found" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/stats/:player_id", async (req, res) => {
+  const apiRes =
+    await axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${req.params.player_id}
+`);
+  res.json(apiRes.data);
 });
 
 module.exports = router;

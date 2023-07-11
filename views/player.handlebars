@@ -1,0 +1,50 @@
+<div class="card m-4">
+  <div class="card-header fs-3 text-center">
+    Player Overview
+  </div>
+  <div class="card-body text-center">
+    <h1 class="card-text">{{playerData.player.first_name}} {{playerData.player.last_name}}</h1>
+    <h2 class="card-text">Team: {{playerData.player.team.full_name}}</h2>
+    <h2 class="card-text">Position: {{playerData.player.position}}</h2>
+    {{#if playerData.player.height_feet}}
+    <h2 class="card-text">Height: {{playerData.player.height_feet}}' {{playerData.player.height_inches}}"</h2>
+    {{/if}}
+    {{#if playerData.player.weight_pounds}}
+    <h2 class="card-text">Weight: {{playerData.player.weight_pounds}} lbs</h2>
+    {{/if}}
+    <button type="button" class="btn btn-danger mt-2" id="deletePlayerBtn" data-player_id="{{playerData.player.id}}">Delete Player</button>
+  </div>
+</div>
+{{#if playerData.stats}}
+  <div class="card m-4">
+    <div class="card-header fs-3 text-center">
+      Player's Season Stat Sheet
+    </div>
+    <div class="card-body text-center">
+      <h4 class="card-text">Stats Season: {{playerData.stats.season}}</h4>
+      <h4 class="card-text">Games played: {{playerData.stats.games_played}}</h4>
+      <h4 class="card-text">Minutes played per game: {{playerData.stats.min}}</h4>
+      <h4 class="card-text">Points: {{playerData.stats.pts}}</h4>
+      <h4 class="card-text">Assists: {{playerData.stats.ast}}</h4>
+      <h4 class="card-text">Rebounds: {{playerData.stats.reb}}</h4>
+      <h4 class="card-text">Blocks: {{playerData.stats.blk}}</h4>
+      <h4 class="card-text">Steals: {{playerData.stats.stl}}</h4>
+      <h4 class="card-text">Fouls: {{playerData.stats.pf}}</h4>
+      <h4 class="card-text">Turnovers: {{playerData.stats.turnover}}</h4>
+      <h4 class="card-text">2 Point %: {{playerData.stats.fg_pct}}</h4>
+      <h4 class="card-text">3 Point %: {{playerData.stats.fg3_pct}}</h4>
+      <h4 class="card-text">Free-throw %: {{playerData.stats.ft_pct}}</h4>
+    </div>
+  </div>
+{{else}}
+  <div class="card m-4">
+    <div class="card-header fs-3 text-center">
+      Player's Stat Sheet
+    </div>
+    <div class="card-body text-center">
+      <h2 class="card-text">Stats not found!</h2>
+    </div>
+  </div>
+{{/if}}
+
+<script src="../js/deletePlayer.js"></script>

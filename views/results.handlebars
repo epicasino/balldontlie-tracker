@@ -1,7 +1,6 @@
 <div class="m-3" id="resultsContainer">
   {{#each playerResults as |player|}}
   
-  {{#if player.position}}
   <div class="card">
     <div class="card-header fs-5">
       Featured
@@ -19,9 +18,8 @@
       <button type="button" class="btn btn-primary" data-player_id="{{player.id}}" data-first_name="{{player.first_name}}" data-last_name="{{player.last_name}}" id="savePlayerBtn">Save Player</button>
     </div>
   </div>
-  {{/if}}
   
   {{/each}}
 </div>
 
-<script src="./js/savePlayer.js"></script>
+<script src="../js/savePlayer.js"></script>

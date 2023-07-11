@@ -6,7 +6,7 @@ const searchForPlayer = async (event) => {
   playerNameInput = playerNameInput.split(" ").join("%20");
 
   if (playerNameInput) {
-    window.location.replace(`/${playerNameInput}`);
+    window.location.replace(`/search/${playerNameInput}`);
   }
 };
 
