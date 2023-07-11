@@ -1,1 +1,15 @@
 <h1 class="text-center m-5 p-5 card bg-dark">Hello, {{userPlayers.username}}!</h1>
+
+<div class="m-5" id="userPlayerContainer">
+  <div class="card">
+    <div class="card-header fs-2">
+      Saved Players: 
+    </div>
+    <div class="card-body m-3">
+      {{#each userPlayers.players as |player|}}
+        <a class="card-text fs-5" href="/player/{{player.player_id}}" data-id="{{player.player_id}}">{{player.first_name}} {{player.last_name}}</>
+        <hr>
+      {{/each}}
+    </div>
+  </div>
+</div>
