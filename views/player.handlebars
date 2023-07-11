@@ -5,6 +5,7 @@
   <div class="card-body text-center">
     <h1 class="card-text">{{playerData.player.first_name}} {{playerData.player.last_name}}</h1>
     <h2 class="card-text">Team: {{playerData.player.team.full_name}}</h2>
+    <img data-team_id="{{playerData.player.team.id}}" id="playerTeamImg">
     <h2 class="card-text">Position: {{playerData.player.position}}</h2>
     {{#if playerData.player.height_feet}}
     <h2 class="card-text">Height: {{playerData.player.height_feet}}' {{playerData.player.height_inches}}"</h2>
@@ -47,4 +48,6 @@
   </div>
 {{/if}}
 
+{{> axios}}
 <script src="../js/deletePlayer.js"></script>
+<script src="../js/playerTeamImg.js"></script>
