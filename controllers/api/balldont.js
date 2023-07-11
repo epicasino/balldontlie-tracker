@@ -50,10 +50,10 @@ router.get("/teams/:team_id", async (req, res) => {
   try {
     const selectedTeam = await Team.findOne({
       where: {
-        team_logo: req.params.team_id,
-        // user_id: req.session.userId,
+        team_id: req.params.team_id,
       },
     });
+    console.log(selectedTeam);
     if (selectedTeam) {
       console.log(selectedTeam);
 
