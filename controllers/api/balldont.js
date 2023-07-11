@@ -29,6 +29,22 @@ router.get("/:user_id", async (req, res) => {
   res.status(200).json(userPlayers);
 });
 
+router.delete("/player/:player_id", async (req, res) => {
+  try {
+    const deletedPlayer = await Player.destroy({
+      where: {
+        player_id: req.params.player_id,
+        user_id: req.session.userId,
+      },
+    });
+    if (deletedPlayer) {
+      res.status(200).json({ message: "Player Deleted!" });
+    } else res.status(404).json({ message: "404 Not Found" });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/stats/:player_id", async (req, res) => {
   const apiRes =
     await axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${req.params.player_id}

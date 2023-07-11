@@ -7,8 +7,9 @@
     </div>
     <div class="card-body m-3">
       {{#each userPlayers.players as |player|}}
-        <a class="card-text fs-5" href="/player/{{player.player_id}}" data-id="{{player.player_id}}">{{player.first_name}} {{player.last_name}}</>
-        <hr>
+      <a class="card-text fs-5" href="/player/{{player.player_id}}" data-id="{{player.      player_id}}">{{player.first_name}}
+      {{player.last_name}}</a>
+      <hr>
       {{/each}}
     </div>
   </div>

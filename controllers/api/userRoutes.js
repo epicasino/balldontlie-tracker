@@ -66,6 +66,12 @@ router.post("/logout", (req, res) => {
   }
 });
 
-
+router.post("/auth", (req, res) => {
+  if (req.session.loggedIn) {
+    res.status(200).json(req.session.username);
+  } else {
+    res.status(404).end();
+  }
+});
 
 module.exports = router;
