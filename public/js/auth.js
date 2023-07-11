@@ -7,7 +7,7 @@ const authLogin = async () => {
     loginStatusEl.textContent = loginStatus.data;
     loginStatusEl.setAttribute('href', '/dashboard');
   } else {
-    loginStatus.textContent = 'Login';
+    loginStatusEl.textContent = 'Login';
     loginStatusEl.setAttribute('href', '/login');
   }
 };

@@ -12,7 +12,7 @@
     {{#if playerData.player.weight_pounds}}
     <h2 class="card-text">Weight: {{playerData.player.weight_pounds}} lbs</h2>
     {{/if}}
-    <button type="button" class="btn btn-danger mt-2">Delete Player</button>
+    <button type="button" class="btn btn-danger mt-2" id="deletePlayerBtn" data-player_id="{{playerData.player.id}}">Delete Player</button>
   </div>
 </div>
 {{#if playerData.stats}}
@@ -46,3 +46,5 @@
     </div>
   </div>
 {{/if}}
+
+<script src="../js/deletePlayer.js"></script>
