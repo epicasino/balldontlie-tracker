@@ -5,7 +5,7 @@
 --col2: #FF8303;
 --col3: #A35709;
 --col4: #ff810394;
---col5: #000000;
+--col5: #ff81032a;
 --col6: #fff;
 
 }
@@ -73,7 +73,7 @@
 #loginCard, #registerCard {
   height: 40vh;
   width: 30vw;
-  box-shadow: .5rem .5rem 2px 1px var(--col4), -.5rem -.5rem 2px 1px #ff81032a;
+  box-shadow: .5rem .5rem 2px 1px var(--col5), -.5rem -.5rem 2px 1px var(--col4);
 }
 
 #loginCard > .card-body {
