@@ -1,22 +1,24 @@
-<div class="card m-4">
-  <div class="card-header fs-3 text-center">
-    Player Overview
+<div class="dashboardInfo">
+  <div class="card m-4">
+    <div class="card-header fs-3 text-center">
+      Player Overview
+    </div>
+    <div class="card-body text-center">
+      <h1 class="card-text">{{playerData.player.first_name}} {{playerData.player.last_name}}</h1>
+      <h2 class="card-text">Team: {{playerData.player.team.full_name}}</h2>
+      <img data-team_id="{{playerData.player.team.id}}" id="playerTeamImg">
+      <h2 class="card-text">Position: {{playerData.player.position}}</h2>
+      {{#if playerData.player.height_feet}}
+      <h2 class="card-text">Height: {{playerData.player.height_feet}}' {{playerData.player.height_inches}}"</h2>
+      {{/if}}
+      {{#if playerData.player.weight_pounds}}
+      <h2 class="card-text">Weight: {{playerData.player.weight_pounds}} lbs</h2>
+      {{/if}}
+      <button type="button" class="btn btn-danger mt-4" id="deletePlayerBtn"
+        data-player_id="{{playerData.player.id}}">Delete Player</button>
+    </div>
   </div>
-  <div class="card-body text-center">
-    <h1 class="card-text">{{playerData.player.first_name}} {{playerData.player.last_name}}</h1>
-    <h2 class="card-text">Team: {{playerData.player.team.full_name}}</h2>
-    <img data-team_id="{{playerData.player.team.id}}" id="playerTeamImg">
-    <h2 class="card-text">Position: {{playerData.player.position}}</h2>
-    {{#if playerData.player.height_feet}}
-    <h2 class="card-text">Height: {{playerData.player.height_feet}}' {{playerData.player.height_inches}}"</h2>
-    {{/if}}
-    {{#if playerData.player.weight_pounds}}
-    <h2 class="card-text">Weight: {{playerData.player.weight_pounds}} lbs</h2>
-    {{/if}}
-    <button type="button" class="btn btn-danger mt-2" id="deletePlayerBtn" data-player_id="{{playerData.player.id}}">Delete Player</button>
-  </div>
-</div>
-{{#if playerData.stats}}
+  {{#if playerData.stats}}
   <div class="card m-4">
     <div class="card-header fs-3 text-center">
       Player's Season Stat Sheet
@@ -37,7 +39,7 @@
       <h4 class="card-text">Free-throw %: {{playerData.stats.ft_pct}}</h4>
     </div>
   </div>
-{{else}}
+  {{else}}
   <div class="card m-4">
     <div class="card-header fs-3 text-center">
       Player's Stat Sheet
@@ -46,7 +48,8 @@
       <h2 class="card-text">Stats not found!</h2>
     </div>
   </div>
-{{/if}}
+  {{/if}}
+</div>
 
 {{> axios}}
 <script src="../js/deletePlayer.js"></script>

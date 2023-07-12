@@ -10,6 +10,24 @@
 
 }
 
+.navbar {
+  border-radius: 0 0 15px 15px;
+  -webkit-border-radius: 0 0 15px 15px;
+  -moz-border-radius: 0 0 15px 15px;
+  -ms-border-radius: 0 0 15px 15px;
+  -o-border-radius: 0 0 15px 15px;
+  box-shadow: 0 0 2px 1px #ff810394;
+} 
+
+.dashboardInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboardInfo > .card {
+  width: 50%;
+}
+
 #ballDontLie > h1 {
   font-size: 5em;
   color: #000000;
@@ -22,15 +40,6 @@
   background-position: 75% 60%;
   background-size: cover;
 }
-
-.navbar {
-  border-radius: 0 0 15px 15px;
-  -webkit-border-radius: 0 0 15px 15px;
-  -moz-border-radius: 0 0 15px 15px;
-  -ms-border-radius: 0 0 15px 15px;
-  -o-border-radius: 0 0 15px 15px;
-  box-shadow: 0 0 2px 1px #ff810394;
-} 
 
 #loginRegCards {
   height: 75vh;
