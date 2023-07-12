@@ -18,7 +18,7 @@ const authLogin = async () => {
     logoutBtn.textContent = "Logout";
   } else if (loginStatus.status === 404) {
     loginStatusEl.textContent = "Login";
-    loginStatusEl.setAttribute("href", "/dashboard");
+    loginStatusEl.setAttribute("href", "/login");
     loginStatusEl.setAttribute("class", "nav-link border border-warning");
     logoutBtn.setAttribute("style", "display:none");
   }
