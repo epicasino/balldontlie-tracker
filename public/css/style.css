@@ -4,7 +4,7 @@
 --col1: #F0E3CA;
 --col2: #FF8303;
 --col3: #A35709;
---col4: #A35709;
+--col4: #ff810394;
 --col5: #000000;
 --col6: #fff;
 
@@ -73,7 +73,7 @@
 #loginCard, #registerCard {
   height: 40vh;
   width: 30vw;
-  box-shadow: .5rem .5rem 2px 1px #ff810394, -.5rem -.5rem 2px 1px #ff81032a;
+  box-shadow: .5rem .5rem 2px 1px var(--col4), -.5rem -.5rem 2px 1px #ff81032a;
 }
 
 #loginCard > .card-body {
@@ -103,8 +103,7 @@
 }
 
 #footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  /* height: 2.5rem;     */
-}
+  text-align: center;
+  padding: 3px;
+  /* background-color: darkgray; */
+  color: white;}
