@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse fs-4 mx-3" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarLinks">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
@@ -31,15 +31,30 @@
           </li>
         </ul>
         <div class="navbar-nav">
-          <a class="nav-link" id="loginStatusBtn"></a>
+          <a class="nav-link" id="loginStatusBtn" href="/login"></a>
+          <button class='nav-link' id="logoutBtn"></button>
         </div>
       </div>
     </div>
   </nav>
   {{{body}}}
-
   {{> axios}}
-  <script src="./js/auth.js"></script>
+<footer id="footer" class="bg-body-tertiary">
+  <p>Ball Don't Lie. The ultimate basketball search and tracker application.
+  All pages, links, and results are constantly reviewed to avoid errors, but we cannot warrant full correctness of
+  all content. While using Ball Don't Lie, you agree to have read and accepted our terms of use, cookie and privacy policy.
+  <br>
+  <br>
+  Copyright 2023 by Ball Don't Lie. All Rights Reserved.
+  Ball Don't Lie is Powered by Strong Individuals.
+  <br>
+  <small><a class="text-decoration-none text-secondary" href="https://github.com/epicasino/balldontlie-tracker">GitHub</a></small>
+  </p>
+</footer>  
+<script src="./js/auth.js"></script>
 </body>
+
+
+
 
 </html>

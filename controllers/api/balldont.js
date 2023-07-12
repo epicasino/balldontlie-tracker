@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const { Player, User } = require("../../models");
+const { Player, User, Team } = require("../../models");
 const axios = require("axios");
+const { getMainColor, getSecondaryColor } = require("nba-color");
 
 // save player data on balldontlie
 router.post("/save", async (req, res) => {
@@ -37,9 +38,36 @@ router.delete("/player/:player_id", async (req, res) => {
         user_id: req.session.userId,
       },
     });
+
     if (deletedPlayer) {
       res.status(200).json({ message: "Player Deleted!" });
     } else res.status(404).json({ message: "404 Not Found" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/teams/:team_id", async (req, res) => {
+  try {
+    const selectedTeam = await Team.findOne({
+      where: {
+        team_id: req.params.team_id,
+      },
+    });
+    const teamMainColor = await getMainColor(selectedTeam.dataValues.team_name);
+    const teamSecondColor = await getSecondaryColor(
+      selectedTeam.dataValues.team_name
+    );
+    const teamColors = {
+      teamMainColor,
+      teamSecondColor
+    }
+    if (selectedTeam) {
+      console.log({ selectedTeam });
+
+      res.status(200).json({ selectedTeam, teamColors });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
