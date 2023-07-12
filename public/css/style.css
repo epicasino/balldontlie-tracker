@@ -103,7 +103,22 @@
 }
 
 #footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: .75em;
   text-align: center;
-  padding: 3px;
-  /* background-color: darkgray; */
-  color: white;}
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:12%;
+  width:100%;
+}
+
+#footer > p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  margin-top: 1%;
+}
