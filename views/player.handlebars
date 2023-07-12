@@ -1,6 +1,6 @@
 <div class="dashboardInfo">
-  <div class="card m-4">
-    <div class="card-header fs-3 text-center">
+  <div class="card m-4 playerCard">
+    <div class="card-header fs-1 text-center">
       Player Overview
     </div>
     <div class="card-body text-center">
@@ -19,11 +19,11 @@
     </div>
   </div>
   {{#if playerData.stats}}
-  <div class="card m-4">
-    <div class="card-header fs-3 text-center">
+  <div class="card m-4 playerCard">
+    <div class="card-header fs-1 text-center">
       Player's Season Stat Sheet
     </div>
-    <div class="card-body text-center">
+    <div class="card-body text-center d-flex flex-column justify-content-center">
       <h4 class="card-text">Stats Season: {{playerData.stats.season}}</h4>
       <h4 class="card-text">Games played: {{playerData.stats.games_played}}</h4>
       <h4 class="card-text">Minutes played per game: {{playerData.stats.min}}</h4>
