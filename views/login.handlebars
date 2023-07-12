@@ -1,32 +1,37 @@
-<div class="register">
-  <form>
-    <h2>Register</h2>
-    <div class="input-group">
-      <label for="username">Username</label>
-      <input type="text" id="regUsername" name="username" placeholder="Enter your username">
+<div class="d-flex justify-content-center" id="loginRegCards">
+  <form class="card m-5" id="registerCard">
+    <h2 class="card-header">Register</h2>
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" id="regUsername">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="regPassword">
+      </div>
     </div>
-    <div class="input-group">
-      <label for="password">Password</label>
-      <input type="password" id="regPassword" name="password" placeholder="Enter your password">
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary" id="registerSubmitBtn">Register</button>
     </div>
-    <button type="submit" id="registerSubmitBtn">Register</button>
+  </form>
+  
+  <form class="card m-5" id="loginCard">
+    <h2 class="card-header">Login</h2>
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" id="loginUsername">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="loginPassword">
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary" id="loginSubmitBtn">Login</button>
+    </div>
   </form>
 </div>
 
-<div class="login">
-  <form>
-    <h2>Login</h2>
-    <div class="input-group">
-      <label for="username">Username</label>
-      <input type="text" id="loginUsername" name="username" placeholder="Enter your username">
-    </div>
-    <div class="input-group">
-      <label for="password">Password</label>
-      <input type="password" id="loginPassword" name="password" placeholder="Enter your password">
-    </div>
-    <button type="submit" id="loginSubmitBtn">Log in</button>
-  </form>
-</div>
-
-<button type="button" id="logoutBtn">Logout</button>
 <script src="./js/login.js"></script>

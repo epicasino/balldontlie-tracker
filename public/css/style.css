@@ -10,6 +10,61 @@
 
 }
 
+#ballDontLie > h1 {
+  font-size: 5em;
+  color: #000000;
+  text-shadow: 5px 5px #ff8103a2;
+}
+
+#ballDontLie {
+  background-image: url('/assets/images/balldontliebgimage.jpg');
+  /* filter: blur(8px); */
+  background-position: 75% 60%;
+  background-size: cover;
+}
+
+.navbar {
+  border-radius: 0 0 15px 15px;
+  -webkit-border-radius: 0 0 15px 15px;
+  -moz-border-radius: 0 0 15px 15px;
+  -ms-border-radius: 0 0 15px 15px;
+  -o-border-radius: 0 0 15px 15px;
+  box-shadow: 0 0 2px 1px #ff810394;
+} 
+
+#loginRegCards {
+  height: 75vh;
+  align-items: center;
+}
+
+#loginCard, #registerCard {
+  height: 40vh;
+  width: 30vw;
+  box-shadow: .5rem .5rem 2px 1px #ff810394, -.5rem -.5rem 2px 1px #ff81032a;
+}
+
+#loginCard > .card-body {
+  margin: 0 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#registerCard > .card-body {
+  margin: 0 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#loginCard > .card-footer {
+  padding: 2% 0 2% 5%;
+}
+
+#registerCard > .card-footer {
+  padding: 2% 0 2% 5%;
+}
+
 #playerNameInput {
   height: 4rem
 }
