@@ -28,6 +28,30 @@
   width: 50%;
 }
 
+#navbarLinks {
+  text-decoration: underline #fff;
+}
+
+#loginStatusBtn.border-warning {
+  text-decoration: underline #FF8303;
+  border-color: #FF8303 !important;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}
+
+#logoutBtn.border-warning {
+  text-decoration: underline #FF8303;
+  border-color: #FF8303 !important;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}
+
 #ballDontLie > h1 {
   font-size: 5em;
   color: #000000;
