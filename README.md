@@ -30,30 +30,36 @@
 
 ## Usage
 
-**You will be presented with the homepage upon visiting the application. Click on the form in the middle of the page to start searching for a player.**
-**Type your favorite player in the text field, then press 'Search' next to the text field.**
+1. You will be presented with the homepage upon visiting the application. Click on the form in the middle of the page to start searching for a player. Type your favorite player in the text field, then press 'Search' next to the text field.
+  
 ![BallDontLie Homepage](./assets/images/Step%202.png)
 
-**In this example, we searched up 'LeBron James.' Searching by only First or Last name will show multiple results. To save a player, click "Save Player"**
+2. In this example, we searched up 'LeBron James.' Searching by only First or Last name will show multiple results. To save a player, click "Save Player"
+  
 ![BallDontLie Search Player Results](./assets/images/Step%204.png)
 
-**If you haven't signed in, or made an account, you will be redirected to the login/register page to register/log in. In this instance, we will need to create an account.**
-**Type your desired username and password.**
+3. If you haven't signed in, or made an account, you will be redirected to the login/register page to register/log in. In this instance, we will need to create an account. Type your desired username and password.
+  
 ![BallDontLie Login Page](./assets/images/Step%205.png)
 
-**After registering/logging in, you are able to now save players. After searching, click "Save Player" once more to save your player. You will be prompted that the player is saved, and you will be redirected to the homepage.**
+4. After registering/logging in, you are able to now save players. After searching, click "Save Player" once more to save your player. You will be prompted that the player is saved, and you will be redirected to the homepage.
+  
 ![BallDontLie Search Player Results, User is Logged In.](./assets/images/Step%207.png)
 
-**To access your saved players, click "Dashboard" on the navbar.**
+5. To access your saved players, click "Dashboard" on the navbar.
+  
 ![BallDontLie Homepage, User clicks on Dashboard](./assets/images/Step%208.png)
 
-**On your dashboard,  will be presented with a personal 'Hello' along with a section with your saved players. In this instance, we will click on our previously saved player, 'LeBron James.'**
+6. On your dashboard,  will be presented with a personal 'Hello' along with a section with your saved players. In this instance, we will click on our previously saved player, 'LeBron James.'
+
 ![BallDontLie Dashboard Page](./assets/images/Step%209.png)
 
-**You will then be presented with the player's information and stat sheet, along with the boxes having the player's team colors. If you choose to stop tracking the player, you can click on the "Delete Player" button.**
+7. You will then be presented with the player's information and stat sheet, along with the boxes having the player's team colors. If you choose to stop tracking the player, you can click on the "Delete Player" button.
+  
 ![BallDontLie Player Page](./assets/images/Step%2010.png)
 
-**Upon deleting the player, your dashboard will update with the removal of the saved player. If you choose to end your session, a "Logout" button is located on the top-right of the page.**
+8. Upon deleting the player, your dashboard will update with the removal of the saved player. If you choose to end your session, a "Logout" button is located on the top-right of the page.
+
 ![BallDontLie updated dashboard after deleting a player, user logs out](./assets/images/Step%2011.png)
 
 ## Credits
@@ -66,7 +72,7 @@
 - [JosePerez013](https://github.com/JosePerez013)
 - [jrainey95 (Jonathan)](https://github.com/jrainey95)
 
-### Honorable Mentions**
+### Honorable Mentions
 
 - [nba-color npm package: used in the player section of the application to retrieve the player's team colors.](https://www.npmjs.com/package/nba-color)
 - [balldontlie.io: API used to get updated NBA player info.](https://app.balldontlie.io/)
