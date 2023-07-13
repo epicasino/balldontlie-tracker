@@ -64,6 +64,7 @@ router.get("/teams/:team_id", async (req, res) => {
       teamSecondColor
     }
     if (selectedTeam) {
+      console.log({ teamColors })
       console.log({ selectedTeam });
 
       res.status(200).json({ selectedTeam, teamColors });
