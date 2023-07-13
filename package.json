@@ -1,5 +1,5 @@
 {
-  "name": "project-2-temp",
+  "name": "balldontlie-tracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -20,7 +20,6 @@
     "express": "^4.18.2",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
-    "inquirer": "^9.2.7",
     "mysql2": "^2.0.1",
     "nba-color": "^1.4.1",
     "sequelize": "^5.22.5",

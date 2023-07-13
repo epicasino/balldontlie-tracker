@@ -1,14 +1,23 @@
 # [balldontlie-tracker](https://balldontlie-5b4e2d2e88fb.herokuapp.com/)
 
+![GitHub repo size](https://img.shields.io/github/repo-size/epicasino/balldontlie-tracker)
+![GitHub](https://img.shields.io/github/license/epicasino/balldontlie-tracker)
+![GitHub top language](https://img.shields.io/github/languages/top/epicasino/balldontlie-tracker)
+![GitHub language count](https://img.shields.io/github/languages/count/epicasino/balldontlie-tracker)
+
 ## Description
 
 - A simple, sleek, and functional NBA player search application to track your favorite basketball players in the NBA.
 - With this application, you can easily track the entire NBA roster with a simple search, and save your favorite players in your account's dashboard.
 - Player data and storage possible by the implementation of a MySQL database to store user data, NBA team logos, and api info recieved from third party apis.
 
-## Table of Contents (Optional)
+## Features
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+- Search for players in the NBA and get their up-to-date information, along with their weight and height, if provided 🏀
+- Account creation to save your favorite players to your account, and a login option to access them for later 🔥
+- Saved players get an in depth description, such as season stats and team-logo 🏀 🔥
+
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -17,52 +26,71 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-[**A live deployment of the website is provided via Heroku**](https://balldontlie-5b4e2d2e88fb.herokuapp.com/)
-
-**If you choose to download the application for your own personal usage, continue with the steps below.**
-
-**BEFORE PROCEEDING:** please ensure you have NodeJS installed to properly run the application and it's required dependencies.
+[**Live deployment of the website is provided via Heroku.**](https://balldontlie-5b4e2d2e88fb.herokuapp.com/)
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+**You will be presented with the homepage upon visiting the application. Click on the form in the middle of the page to start searching for a player.**
+**Type your favorite player in the text field, then press 'Search' next to the text field.**
+![BallDontLie Homepage](./assets/images/Step%202.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+**In this example, we searched up 'LeBron James.' Searching by only First or Last name will show multiple results. To save a player, click "Save Player"**
+![BallDontLie Search Player Results](./assets/images/Step%204.png)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+**If you haven't signed in, or made an account, you will be redirected to the login/register page to register/log in. In this instance, we will need to create an account.**
+**Type your desired username and password.**
+![BallDontLie Login Page](./assets/images/Step%205.png)
+
+**After registering/logging in, you are able to now save players. After searching, click "Save Player" once more to save your player. You will be prompted that the player is saved, and you will be redirected to the homepage.**
+![BallDontLie Search Player Results, User is Logged In.](./assets/images/Step%207.png)
+
+**To access your saved players, click "Dashboard" on the navbar.**
+![BallDontLie Homepage, User clicks on Dashboard](./assets/images/Step%208.png)
+
+**On your dashboard,  will be presented with a personal 'Hello' along with a section with your saved players. In this instance, we will click on our previously saved player, 'LeBron James.'**
+![BallDontLie Dashboard Page](./assets/images/Step%209.png)
+
+**You will then be presented with the player's information and stat sheet, along with the boxes having the player's team colors. If you choose to stop tracking the player, you can click on the "Delete Player" button.**
+![BallDontLie Player Page](./assets/images/Step%2010.png)
+
+**Upon deleting the player, your dashboard will update with the removal of the saved player. If you choose to end your session, a "Logout" button is located on the top-right of the page.**
+![BallDontLie updated dashboard after deleting a player, user logs out](./assets/images/Step%2011.png)
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+### Project Collaborators
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+- [Epicasino (Ray)](https://github.com/epicasino)
+- [Af0nz0 (Alfonso)](https://github.com/Af0nz0)
+- [earnest-dawn (Earnest)](https://github.com/earnest-dawn)
+- [JosePerez013](https://github.com/JosePerez013)
+- [jrainey95 (Jonathan)](https://github.com/jrainey95)
 
-If you followed tutorials, include links to those here as well.
+### Honorable Mentions**
+
+- [nba-color: used in the player section of the application to retrieve the player's team colors.](https://www.npmjs.com/package/nba-color)
+- [balldontlie.io: API used to get updated NBA player info.](https://app.balldontlie.io/)
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+MIT License
 
----
+Copyright (c) 2023 Ray Badua
 
-ðŸ† The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Badges
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
