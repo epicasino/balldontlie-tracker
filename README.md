@@ -68,8 +68,9 @@
 
 ### Honorable Mentions**
 
-- [nba-color: used in the player section of the application to retrieve the player's team colors.](https://www.npmjs.com/package/nba-color)
+- [nba-color npm package: used in the player section of the application to retrieve the player's team colors.](https://www.npmjs.com/package/nba-color)
 - [balldontlie.io: API used to get updated NBA player info.](https://app.balldontlie.io/)
+- [README Usage made possible by Scribe.](https://scribehow.com/shared/BallDontLie_Application_Usage__WjDcR_J8T9G07m9FWrK6IQ)
 
 ## License
 
