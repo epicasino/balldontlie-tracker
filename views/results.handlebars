@@ -8,7 +8,7 @@
         {{#each playerResults as |player|}}
         <h4 class="card-text">{{player.first_name}} {{player.last_name}}</h4>
         <h5 class="card-text">Team: {{player.team.full_name}}</h5>
-        <h5 class="card-text">Position: {{player.position}}</h5>
+        <h5 class="card-text">Position: {{#if player.position}} {{player.position}} {{else}} N/A {{/if}}</h5>
         {{#if player.height_feet}}
         <h5 class="card-text">Height: {{player.height_feet}}' {{player.height_inches}}"</h5>
         {{/if}}

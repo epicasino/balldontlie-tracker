@@ -9,8 +9,6 @@
     </div>
     <div class="card-body m-3">
       {{#each userPlayers.players as |player|}}
-      {{!-- <a class="card-text fs-4 text-decoration-none text-light" href="/player/{{player.player_id}}" data-id="{{player.player_id}}">{{player.first_name}}
-      {{player.last_name}}</a> --}}
       <a class="icon-link icon-link-hover card-text fs-4 text-decoration-none text-light"  href="/player/{{player.player_id}}" data-id="{{player.player_id}}">
       {{player.first_name}}
       {{player.last_name}}
