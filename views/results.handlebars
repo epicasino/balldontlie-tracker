@@ -4,6 +4,7 @@
     <div class="card-header fs-2 text-center text-light">
       Search Results
     </div>
+    {{#if playerResults}}
       <div class="card-body">
         {{#each playerResults as |player|}}
         <h4 class="card-text">{{player.first_name}} {{player.last_name}}</h4>
@@ -19,8 +20,18 @@
         <hr class="py-2">
         {{/each}}
       </div>
+    {{/if}}
+
+    {{#if teamData}}
+      <div class="card-body text-center">
+          <h1>{{teamData.full_name}}</h1>
+          <img data-team_id="{{teamData.id}}" id="teamImg">
+      </div>
+    {{/if}}
   </div>
   
 </div>
 
+{{> axios}}
 <script src="../js/savePlayer.js"></script>
+<script src="../js/teamImg.js"></script>

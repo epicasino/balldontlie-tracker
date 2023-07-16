@@ -11,7 +11,7 @@ router.get("/login", async (req, res) => {
   res.render("login");
 });
 
-router.get("/search/:player", async (req, res) => {
+router.get("/players/:player", async (req, res) => {
   const bdlRes = await axios.get(
     `https://www.balldontlie.io/api/v1/players?search=${req.params.player}`
   );
@@ -19,7 +19,18 @@ router.get("/search/:player", async (req, res) => {
   if (bdlRes.data.data) {
     const playerResults = bdlRes.data.data;
     // console.log(playerResults)
-    res.render("results", { playerResults, layout: "player" });
+    res.render("results", { playerResults, layout: "info" });
+  }
+});
+
+router.get("/teams/:team", async (req, res) => {
+  const teamData = await axios
+    .get(`https://www.balldontlie.io/api/v1/teams/${req.params.team}`)
+    .then((response) => response.data);
+
+  if (teamData) {
+    console.log(teamData);
+    res.render("results", { teamData, layout: "info" });
   }
 });
 
@@ -35,7 +46,7 @@ router.get("/player/:player_id", withAuth, async (req, res) => {
   if (player) {
     const playerData = { player, stats };
     console.log(playerData);
-    res.render("player", { playerData, layout: "player" });
+    res.render("player", { playerData, layout: "info" });
   }
 });
 
