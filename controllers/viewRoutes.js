@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User, Player } = require("../models");
 const withAuth = require("../utils/auth.js");
 const axios = require("axios");
+const dayjs = require("dayjs");
 
 router.get("/", async (req, res) => {
   res.render("home");
@@ -28,9 +29,25 @@ router.get("/teams/:team", async (req, res) => {
     .get(`https://www.balldontlie.io/api/v1/teams/${req.params.team}`)
     .then((response) => response.data);
 
-    console.log(teamData);
+  const currentDate = dayjs().format("YYYY-MM-DD");
+  const pastDate = dayjs().subtract(3, "month").format("YYYY-MM-DD");
+
+  const teamGames = await axios
+    .get(
+      `https://www.balldontlie.io/api/v1/games?end_date=${currentDate}&start_date=${pastDate}&team_ids[]=14`
+    )
+    .then((response) => response.data)
+    .then((games) => games.data.reverse());
+
+  const gameData = await teamGames.forEach((game) => {
+    game.date = game.date.slice(0, 10);
+  });
+
+  // console.log(teamData);
+  // console.log(teamGames);
+
   if (teamData) {
-    res.render("results", { teamData, layout: "info" });
+    res.render("results", { teamData, teamGames, layout: "info" });
   }
 });
 

@@ -40,26 +40,29 @@
       Recent Games
     </div>
     <div class="card-body">
-
-    </div>
-    <div class="card-footer">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          {{!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li> --}}
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      {{#each teamGames as |game|}}
+        <div class="card my-4">
+          <div class="card-header text-center text-light">
+            <h2>{{game.home_team.full_name}} VS. {{game.visitor_team.full_name}}</h2>
+            <h5>{{game.date}}</h5>
+          </div>
+          <div class="card-body d-flex justify-content-center m-3">
+            <div class="card text-center col-6 p-3 m-3">
+              <h4>Home</h4>
+              <h1>{{game.home_team.full_name}}</h1>
+              <img data-team_id="{{game.home_team.id}}" id="teamImg">
+              <h2>Score: {{game.home_team_score}}</h2>
+            </div>
+            
+            <div class="card text-center col-6 p-3 m-3">
+              <h4>Away</h4>
+              <h1>{{game.visitor_team.full_name}}</h1>
+              <img data-team_id="{{game.visitor_team.id}}" id="teamImg">
+              <h2>Score: {{game.visitor_team_score}}</h2>
+            </div>
+          </div>
+        </div>
+      {{/each}}
     </div>
   </div>
 </div>
