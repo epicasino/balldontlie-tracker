@@ -108,6 +108,10 @@ body {
   height: 4rem
 }
 
+#teamNameInput {
+  height: 4rem
+}
+
 #footer {
   margin-top: auto;
   display: flex;
