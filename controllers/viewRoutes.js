@@ -28,8 +28,8 @@ router.get("/teams/:team", async (req, res) => {
     .get(`https://www.balldontlie.io/api/v1/teams/${req.params.team}`)
     .then((response) => response.data);
 
-  if (teamData) {
     console.log(teamData);
+  if (teamData) {
     res.render("results", { teamData, layout: "info" });
   }
 });
