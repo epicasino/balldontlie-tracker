@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { Player, User, Team } = require("../../models");
-const axios = require("axios");
 const { getMainColor, getSecondaryColor } = require("nba-color");
+const axios = require("axios");
+const dayjs = require("dayjs");
 
 // save player data on balldontlie
 router.post("/save", async (req, res) => {
@@ -61,14 +62,37 @@ router.get("/teams/:team_id", async (req, res) => {
     );
     const teamColors = {
       teamMainColor,
-      teamSecondColor
-    }
+      teamSecondColor,
+    };
     if (selectedTeam) {
-      console.log({ teamColors })
+      console.log({ teamColors });
       console.log({ selectedTeam });
 
       res.status(200).json({ selectedTeam, teamColors });
     }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/teams/games/:team_id", async (req, res) => {
+  try {
+    const currentDate = dayjs().format("YYYY-MM-DD");
+    const pastDate = dayjs().subtract(3, "month").format("YYYY-MM-DD");
+
+    const bdlRes = await axios
+      .get(
+        `https://www.balldontlie.io/api/v1/games?end_date=${currentDate}&start_date=${pastDate}&team_ids[]=14`
+      )
+      .then((response) => response.data)
+      .then((games) => games.data.reverse());
+
+    const gameData = await bdlRes.forEach((game) => {
+      game.date = game.date.slice(0, 10);
+    });
+
+    res.status(200).json(bdlRes);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
